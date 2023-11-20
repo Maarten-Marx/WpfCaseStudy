@@ -8,4 +8,9 @@ public class DbData : DbContext
     {
         optionsBuilder.UseSqlite("Data Source = data.db");
     }
+
+    public DbSet<Client> Clients { get; set; } = null!;
+    public DbSet<Product> Products { get; set; } = null!;
+    public DbSet<Order> Orders { get; set; } = null!;
+    public DbSet<OrderLine> OrderLines { get; set; } = null!;
 }
