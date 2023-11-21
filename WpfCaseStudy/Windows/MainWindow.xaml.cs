@@ -22,6 +22,15 @@ public partial class MainWindow
             });
         }
     }
+    
+    #region WindowMenu
+
+    private void OpenHomePage(object _, RoutedEventArgs __)
+    {
+        ContentFrame.Source = new Uri("Pages/HomePage.xaml", UriKind.Relative);
+    }
+
+    #endregion
 
     #region HelpMenu
 

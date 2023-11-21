@@ -4,17 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Client Administration" 
+        Title="Client Administration"
         Height="450" Width="800"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize" SizeToContent="WidthAndHeight">
     <StackPanel>
         <Menu Name="Menu"
               VerticalAlignment="Top"
               HorizontalAlignment="Stretch">
+            <MenuItem Header="Window">
+                <MenuItem Header="Home" Click="OpenHomePage" />
+            </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem Header="About" Click="ShowAbout" />
                 <MenuItem Header="Source Code" Click="OpenGitHubRepo" />
             </MenuItem>
         </Menu>
+        <Frame Name="ContentFrame" NavigationUIVisibility="Hidden" Source="Pages/HomePage.xaml" />
     </StackPanel>
 </Window>
