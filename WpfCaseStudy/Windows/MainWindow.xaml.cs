@@ -22,7 +22,7 @@ public partial class MainWindow
             });
         }
     }
-    
+
     #region WindowMenu
 
     private void OpenHomePage(object _, RoutedEventArgs __)
@@ -42,9 +42,9 @@ public partial class MainWindow
     private void ShowAbout(object _, RoutedEventArgs __)
     {
         new Modal("About", """
-                  Made by Maarten Marx
-                  Student Nr. r0929437
-                  """).ShowDialog();
+                           Made by Maarten Marx
+                           Student Nr. r0929437
+                           """).ShowDialog();
     }
 
     private void OpenGitHubRepo(object _, RoutedEventArgs __)

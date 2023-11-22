@@ -15,15 +15,15 @@ public class Product
         ExportPrice = exportPrice;
     }
 
-    [Key] 
+    [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
-    
+
     public string Name { get; set; }
     public int Stock { get; set; }
-    
+
     public string StorageLocation { get; set; }
-    
+
     public double ImportPrice { get; set; }
 
     public double ExportPrice { get; set; }

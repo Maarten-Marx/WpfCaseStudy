@@ -15,13 +15,12 @@ public class Client
         Email = email;
     }
 
-    [Key] 
-    public string Id { get; set; }
+    [Key] public string Id { get; set; }
     public string Name { get; set; }
     public double Credit { get; set; }
     public string Address { get; set; }
     public string Tel { get; set; }
     public string Email { get; set; }
-    
+
     public List<Order> Orders { get; set; } = new();
 }
