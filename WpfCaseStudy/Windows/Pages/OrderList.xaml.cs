@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Controls;
+using System.Windows.Input;
 using Microsoft.EntityFrameworkCore;
 using WpfCaseStudy.Schema;
 
@@ -23,5 +25,14 @@ public partial class OrderList
             .Include(o => o.OrderLines)
             .ThenInclude(l => l.Product)
             .ToList();
+    }
+
+    private void OpenOrder(object sender, MouseButtonEventArgs __)
+    {
+        if ((sender as ListViewItem)?.DataContext is Order order)
+        {
+            var orderLineList = new OrderLineList(order.Id);
+            NavigationService?.Navigate(orderLineList);
+        }
     }
 }

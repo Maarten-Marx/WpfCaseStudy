@@ -1,0 +1,22 @@
+﻿<Page x:Class="WpfCaseStudy.Windows.Pages.OrderLineList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Title="OrderLines">
+    <StackPanel>
+        <TextBlock Style="{StaticResource H2}">Order Lines</TextBlock>
+        <ListView Name="OrderLines">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Product" DisplayMemberBinding="{Binding Product.Name}" />
+                    <GridViewColumn Header="Ordered" DisplayMemberBinding="{Binding Amount}" />
+                    <GridViewColumn Header="Refunded" DisplayMemberBinding="{Binding Refunded}" />
+                    <GridViewColumn Header="Unit Price (€)" DisplayMemberBinding="{Binding Product.ExportPrice}" />
+                    <GridViewColumn Header="Total Price (€)" DisplayMemberBinding="{Binding TotalPrice}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</Page>
