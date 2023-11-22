@@ -14,6 +14,7 @@
               HorizontalAlignment="Stretch">
             <MenuItem Header="Window">
                 <MenuItem Header="Home" Click="OpenHomePage" />
+                <MenuItem Header="Orders" Click="OpenOrderList" />
             </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem Header="About" Click="ShowAbout" />

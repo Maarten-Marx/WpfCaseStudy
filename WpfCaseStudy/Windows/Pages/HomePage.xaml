@@ -8,7 +8,7 @@
     <StackPanel HorizontalAlignment="Center">
         <TextBlock Style="{StaticResource H1}">Administration</TextBlock>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button IsEnabled="False" Style="{StaticResource BigMenuButton}">Orders</Button>
+            <Button Click="OpenOrdersList" Style="{StaticResource BigMenuButton}">Orders</Button>
             <Button IsEnabled="False" Style="{StaticResource BigMenuButton}">Clients</Button>
             <Button IsEnabled="False" Style="{StaticResource BigMenuButton}">Products</Button>
         </StackPanel>

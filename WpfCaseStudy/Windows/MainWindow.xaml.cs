@@ -30,6 +30,11 @@ public partial class MainWindow
         ContentFrame.Source = new Uri("Pages/HomePage.xaml", UriKind.Relative);
     }
 
+    private void OpenOrderList(object _, RoutedEventArgs __)
+    {
+        ContentFrame.Source = new Uri("Pages/OrderList.xaml", UriKind.Relative);
+    }
+
     #endregion
 
     #region HelpMenu

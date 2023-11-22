@@ -1,0 +1,22 @@
+﻿<Page x:Class="WpfCaseStudy.Windows.Pages.OrderList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Title="OrderList">
+    <StackPanel>
+        <TextBlock Style="{StaticResource H2}">Orders</TextBlock>
+        <ListView Name="Orders">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Client" DisplayMemberBinding="{Binding Client.Name}" />
+                    <GridViewColumn Header="Price (€)" DisplayMemberBinding="{Binding TotalPrice}" />
+                    <GridViewColumn Header="Lines" DisplayMemberBinding="{Binding NumberOfLines}" />
+                    <GridViewColumn Header="Placed on" DisplayMemberBinding="{Binding PlacedOn}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</Page>

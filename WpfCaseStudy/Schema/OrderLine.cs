@@ -25,6 +25,5 @@ public class OrderLine
     public int Amount { get; set; }
     public int Refunded { get; set; } = 0;
 
-
-    public double TotalPrice() => Amount * Product.ExportPrice;
+    public double TotalPrice => (Amount - Refunded) * Product.ExportPrice;
 }

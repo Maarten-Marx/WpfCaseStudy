@@ -1,9 +1,16 @@
-﻿namespace WpfCaseStudy.Windows.Pages;
+﻿using System.Windows;
+
+namespace WpfCaseStudy.Windows.Pages;
 
 public partial class HomePage
 {
     public HomePage()
     {
         InitializeComponent();
+    }
+
+    private void OpenOrdersList(object sender, RoutedEventArgs e)
+    {
+        NavigationService?.Navigate(new OrderList());
     }
 }
