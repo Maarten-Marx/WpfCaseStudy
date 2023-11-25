@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WpfCaseStudy.Schema;
@@ -25,5 +26,5 @@ public class OrderLine
     public int Amount { get; set; }
     public int Refunded { get; set; }
 
-    public double TotalPrice => (Amount - Refunded) * Product.ExportPrice;
+    public double TotalPrice => Math.Round((Amount - Refunded) * Product.ExportPrice, 2);
 }

@@ -25,6 +25,6 @@ public class Order
 
     public List<OrderLine> OrderLines { get; set; } = new();
 
-    public double TotalPrice => OrderLines.Sum(line => line.TotalPrice);
+    public double TotalPrice => Math.Round(OrderLines.Sum(line => line.TotalPrice), 2);
     public double NumberOfLines => OrderLines.Count;
 }
