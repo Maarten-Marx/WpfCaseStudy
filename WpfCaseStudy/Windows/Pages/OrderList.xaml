@@ -23,5 +23,6 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
+        <Button Click="OpenNewOrder">Place an order</Button>
     </StackPanel>
 </Page>

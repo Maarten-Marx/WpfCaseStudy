@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfCaseStudy.Windows.SetAmount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="Set Amount"
+        Width="0" Height="0"
+        ResizeMode="NoResize" SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <TextBlock Style="{StaticResource H2}">Set amount</TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Name="Product" Style="{StaticResource Paragraph}">...</TextBlock>
+            <TextBlock Name="Stock" Style="{StaticResource Paragraph}">...</TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Label}">Order amount:</TextBlock>
+            <TextBox Name="OrderAmount" MinWidth="100" TextChanged="ValidateInput" />
+            <TextBlock Name="InvalidInput" Style="{StaticResource InvalidInput}" Visibility="Hidden">Invalid input!</TextBlock>
+        </StackPanel>
+        <Button Click="Set">Set</Button>
+    </StackPanel>
+</Window>
