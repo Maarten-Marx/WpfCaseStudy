@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿
 using System.Windows.Controls;
 using System.Windows.Input;
-using Microsoft.EntityFrameworkCore;
+using WpfCaseStudy.Controllers;
 using WpfCaseStudy.Schema;
 
 namespace WpfCaseStudy.Windows.Pages;
@@ -12,19 +11,15 @@ public partial class OrderList
     public OrderList()
     {
         InitializeComponent();
-        RetrieveEntries();
-        Orders.ItemsSource = Entries;
+        
+        LoadEntries();
     }
 
-    private List<Order> Entries { get; set; } = new();
+    private readonly OrderDataController _dc = new();
 
-    private void RetrieveEntries()
+    private void LoadEntries()
     {
-        Entries = App.Db.Orders
-            .Include(o => o.Client)
-            .Include(o => o.OrderLines)
-            .ThenInclude(l => l.Product)
-            .ToList();
+        Orders.ItemsSource = _dc.GetAll();
     }
 
     private void OpenOrder(object sender, MouseButtonEventArgs __)

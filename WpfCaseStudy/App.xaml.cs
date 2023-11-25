@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using WpfCaseStudy.Controllers;
 using WpfCaseStudy.Schema;
 using WpfCaseStudy.Windows;
 
@@ -27,7 +28,10 @@ public partial class App
             return;
         }
 
-        Db.Products.AddRange(
+        var productDataController = new ProductDataController();
+        var clientDataController = new ClientDataController();
+
+        productDataController.Add(
             new Product("Aspirin", 100, "123B456", 2.50, 5.00),
             new Product("Ibuprofen", 50, "789C012", 4.75, 8.99),
             new Product("Acetaminophen", 200, "456D789", 3.25, 6.50),
@@ -40,7 +44,7 @@ public partial class App
             new Product("Levothyroxine", 110, "012K345", 10.99, 21.99)
         );
 
-        Db.Clients.AddRange(
+        clientDataController.Add(
             new Client("63421", "MediCare Pharmaceuticals", 800.25,
                 "123 Health Street, Suite 456, Pharma City", "info@medicarepharma.com", "555-111-0001"),
             new Client("89502", "HealthGuard Labs", 600.75, "789 Wellness Avenue, Lab Building",
@@ -48,7 +52,5 @@ public partial class App
             new Client("36789", "LifeCure Solutions", 950.50, "456 Cure Lane, Biotech Tower",
                 "info@lifecuresolutions.com", "555-333-0003")
         );
-
-        Db.SaveChanges();
     }
 }

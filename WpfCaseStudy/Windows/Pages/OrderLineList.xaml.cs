@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
+using System.Windows;
+using WpfCaseStudy.Controllers;
 using WpfCaseStudy.Schema;
 
 namespace WpfCaseStudy.Windows.Pages;
@@ -10,17 +10,17 @@ public partial class OrderLineList
     public OrderLineList(int id)
     {
         InitializeComponent();
-        RetrieveEntries(id);
-        OrderLines.ItemsSource = Entries;
+
+        _orderId = id;
+        LoadEntries();
     }
 
-    private List<OrderLine> Entries { get; set; } = new();
+    private readonly int _orderId;
 
-    private void RetrieveEntries(int id)
+    private readonly OrderLineDataController _dc = new();
+
+    private void LoadEntries()
     {
-        Entries = App.Db.OrderLines
-            .Include(l => l.Product)
-            .Where(l => l.OrderId == id)
-            .ToList();
+        OrderLines.ItemsSource = _dc.GetWhere(l => l.OrderId == _orderId);
     }
 }
