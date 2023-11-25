@@ -11,6 +11,29 @@
         <Setter Property="Margin" Value="10 5" />
     </Style>
 
+    <Style TargetType="TextBlock" x:Key="Paragraph">
+        <Setter Property="TextAlignment" Value="Left" />
+        <Setter Property="Margin" Value="10 5" />
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="Label">
+        <Setter Property="TextAlignment" Value="Left" />
+        <Setter Property="Margin" Value="10 5 0 5" />
+        <Setter Property="Padding" Value="0 10" />
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="InvalidInput">
+        <Setter Property="TextAlignment" Value="Left" />
+        <Setter Property="Foreground" Value="Red" />
+        <Setter Property="Margin" Value="0 5 10 5" />
+        <Setter Property="Padding" Value="0 10" />
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Padding" Value="20 5" />
+    </Style>
+
     <Style TargetType="Button" x:Key="BigMenuButton">
         <Setter Property="Padding" Value="20" />
         <Setter Property="Width" Value="100" />
@@ -23,5 +46,10 @@
 
     <Style TargetType="GridViewColumnHeader">
         <Setter Property="Padding" Value="10 0" />
+    </Style>
+
+    <Style TargetType="TextBox">
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Padding" Value="5 5" />
     </Style>
 </ResourceDictionary>

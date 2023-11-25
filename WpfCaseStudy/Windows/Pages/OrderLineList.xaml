@@ -17,6 +17,11 @@
                     <GridViewColumn Header="Total Price (€)" DisplayMemberBinding="{Binding TotalPrice}" />
                 </GridView>
             </ListView.View>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="PreviewMouseLeftButtonDown" Handler="OpenRefund" />
+                </Style>
+            </ListView.ItemContainerStyle>
         </ListView>
     </StackPanel>
 </Page>
