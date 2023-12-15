@@ -13,4 +13,9 @@ public partial class HomePage
     {
         NavigationService?.Navigate(new OrderList());
     }
+
+    private void OpenClientList(object sender, RoutedEventArgs e)
+    {
+        NavigationService?.Navigate(new ClientList());
+    }
 }

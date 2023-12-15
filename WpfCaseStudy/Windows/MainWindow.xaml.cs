@@ -35,6 +35,11 @@ public partial class MainWindow
         ContentFrame.Source = new Uri("Pages/OrderList.xaml", UriKind.Relative);
     }
 
+    private void OpenClientList(object _, RoutedEventArgs __)
+    {
+        ContentFrame.Source = new Uri("Pages/ClientList.xaml", UriKind.Relative);
+    }
+    
     #endregion
 
     #region HelpMenu

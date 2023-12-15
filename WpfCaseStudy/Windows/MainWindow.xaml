@@ -15,6 +15,7 @@
             <MenuItem Header="Window">
                 <MenuItem Header="Home" Click="OpenHomePage" />
                 <MenuItem Header="Orders" Click="OpenOrderList" />
+                <MenuItem Header="Clients" Click="OpenClientList" />
             </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem Header="About" Click="ShowAbout" />
