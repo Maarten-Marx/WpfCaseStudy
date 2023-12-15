@@ -1,0 +1,22 @@
+﻿<Page x:Class="WpfCaseStudy.Windows.Pages.ProductList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Title="ProductList">
+    <StackPanel>
+        <TextBlock Style="{StaticResource H2}">Products</TextBlock>
+        <ListView Name="Products">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Stock" DisplayMemberBinding="{Binding Stock}" />
+                    <GridViewColumn Header="Storage Location" DisplayMemberBinding="{Binding StorageLocation}" />
+                    <GridViewColumn Header="Import Price" DisplayMemberBinding="{Binding ImportPrice}" />
+                    <GridViewColumn Header="Export Price" DisplayMemberBinding="{Binding ExportPrice}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</Page>

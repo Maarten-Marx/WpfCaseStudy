@@ -16,6 +16,7 @@
                 <MenuItem Header="Home" Click="OpenHomePage" />
                 <MenuItem Header="Orders" Click="OpenOrderList" />
                 <MenuItem Header="Clients" Click="OpenClientList" />
+                <MenuItem Header="Products" Click="OpenProductList" />
             </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem Header="About" Click="ShowAbout" />
