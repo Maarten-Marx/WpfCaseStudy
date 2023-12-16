@@ -21,6 +21,7 @@ public partial class OrderLineList
 
     private readonly OrderLineDataController _orderLineDc = new();
     private readonly ClientDataController _clientDc = new();
+    private readonly ProductDataController _productDc = new();
 
     private void LoadEntries()
     {
@@ -36,6 +37,10 @@ public partial class OrderLineList
         _clientDc.UpdateWhere(
             c => c.Id == line.Order.ClientId,
             c => c.Credit += line.Product.ExportPrice * amount
+        );
+        _productDc.UpdateWhere(
+            p => p.Id == line.ProductId,
+            p => p.Stock += amount
         );
         LoadEntries();
     }
