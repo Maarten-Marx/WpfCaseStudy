@@ -8,7 +8,7 @@ public partial class Modal
     {
         InitializeComponent();
         Title = title;
-        Content.Text = content;
+        ModalContent.Text = content;
         CloseButton.Content = buttonContent;
     }
 
