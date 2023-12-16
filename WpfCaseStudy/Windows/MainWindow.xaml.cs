@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -10,7 +11,7 @@ public partial class MainWindow
     public MainWindow()
     {
         InitializeComponent();
-        if (Environment.GetEnvironmentVariable("dev") == "true")
+        if (Environment.GetCommandLineArgs().Contains("--dev"))
         {
             var mockDataButton = new MenuItem { Header = "Add mock data" };
             mockDataButton.Click += App.CreateMockData;
