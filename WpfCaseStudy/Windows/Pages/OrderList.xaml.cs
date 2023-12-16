@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -18,6 +19,8 @@ public partial class OrderList
 
     private readonly OrderDataController _orderDc = new();
     private readonly OrderLineDataController _orderLineDc = new();
+    private readonly ClientDataController _clientDc = new();
+    private readonly ProductDataController _productDc = new();
 
     private void LoadEntries()
     {
@@ -40,10 +43,20 @@ public partial class OrderList
 
         foreach (var l in lines)
         {
+            _productDc.UpdateWhere(
+                p => p.Id == l.ProductId,
+                p => p.Stock -= l.Amount
+            );
+            
             l.OrderId = order.Id;
         }
 
         _orderLineDc.Add(lines.ToArray());
+
+        _clientDc.UpdateWhere(
+            c => c.Id == client.Id,
+            c => c.Credit -= lines.Sum(l => l.TotalPrice)
+        );
 
         LoadEntries();
     }
