@@ -12,7 +12,7 @@ jobs:
 
     env:
       project_path: WpfCaseStudy/WpfCaseStudy.csproj
-      build_path: WpfCaseStudy/bin/Release/net7.0-windows/win-x86/publish/*.exe
+      build_path: WpfCaseStudy/bin/Release/net7.0-windows/win-x86/publish/
 
     steps:
       - name: Checkout
